@@ -4,7 +4,7 @@ This fork of PopLib aims to re-open and commpliment TeamPopWork's copy, by addin
 # What has changed from the original SexyAppBase 1.3 and 1.34:
     A more appropriate name.  
     C++20 and 23 instead of C++14.
-    Renderers such as SDL and OpenGL, ridding of platform specifics from the Windows APi, and making this independent to all Operating Systems, including Apple and Linux.
+    Renderers such as SDL and OpenGL, ridding of platform specifics from the Windows API, and making this independent to all Operating Systems, including Apple and Linux.
     Opensource philosophy.
     partial paklib support (PopCap's pak file format).
     
