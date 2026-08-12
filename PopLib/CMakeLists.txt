@@ -92,15 +92,9 @@ target_include_directories(${PROJECT_NAME}
         ${POPLIB_ROOT_DIR}/external/ogg/include
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${POPLIB_ROOT_DIR}/external/misc
-        ${POPLIB_ROOT_DIR}/external/discordrpc
         ${POPLIB_ROOT_DIR}/external/stb_image
 )
 
-if (FEATURE_DISCORD_RPC)
-    target_include_directories(${PROJECT_NAME} PUBLIC
-        ${POPLIB_ROOT_DIR}/external/discordrpc
-    )
-endif()
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
 	STB_IMAGE_IMPLEMENTATION
