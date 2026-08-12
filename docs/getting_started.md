@@ -12,7 +12,7 @@ Building **PopLib** is actually very simple. It's like any *CMake* project! Just
 Okay, first of all, clone the repository. I'll just assume you installed *Git*, so just enter these commands in your command prompt or whatever you have:
 
 ```
-git clone https://github.com/teampopwork/PopLib.git --recursive
+git clone --branch "dev" "https://github.com/teampopwork/PopLib" --recursive
 ```
 
 > The --recursive flag is crucial, it ensures all the libraries are also cloned.
