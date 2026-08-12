@@ -1,5 +1,5 @@
 # CMakeLists.txt
-cmake_minimum_required(VERSION 3.26 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -14,8 +14,6 @@ set(BUILD_SHARED_LIBS OFF)
 set(_Python3_EXECUTABLE_DEBUG "" CACHE FILEPATH "Python debug executable")
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-option(FEATURE_DISCORD_RPC "Discord RPC" OFF)
 option(BUILD_EXAMPLES "Build Examples" ON)
 option(CONSOLE "Show the console on Windows" ON)
 option(BUILD_TOOLS "Build Tools" ON)
@@ -28,9 +26,6 @@ else ()
 	set(IS_64BIT false)
 endif()
 
-if(FEATURE_DISCORD_RPC)
-	add_compile_definitions(_FEATURE_DISCORD_RPC)
-endif()
 
 if(CONSOLE AND WIN32)
 	add_compile_definitions(_CONSOLE_ON)
@@ -63,7 +58,6 @@ add_subdirectory(external/openal EXCLUDE_FROM_ALL)
 add_subdirectory(external/miniaudio EXCLUDE_FROM_ALL)
 add_subdirectory(external/zlib EXCLUDE_FROM_ALL)
 add_subdirectory(external/misc EXCLUDE_FROM_ALL)
-add_subdirectory(external/discordrpc EXCLUDE_FROM_ALL)
 add_subdirectory(external/tinyxml2 EXCLUDE_FROM_ALL)
 
 
@@ -83,7 +77,6 @@ if(BUILD_EXAMPLES)
 	add_subdirectory(examples)
 endif()
 
-# djugjsfgufdgujdfgiujgdijfgifjdgidfjgifdgjfdgufdguifdg electr0gunner told me to add this
 if(BUILD_EXAMPLES OR BUILD_TOOLS)
     set(demo_deps PopLib)
 
