@@ -16,7 +16,6 @@ set(_Python3_EXECUTABLE_DEBUG "" CACHE FILEPATH "Python debug executable")
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-option(FEATURE_DISCORD_RPC "Feature Discord RPC" OFF)
 option(FEATURE_STEAM_API "Feature Steam API" OFF)
 option(BUILD_EXAMPLES "Build Examples" ON)
 option(CONSOLE "Show the console on Windows" ON)
@@ -30,9 +29,6 @@ else ()
 	set(IS_64BIT false)
 endif()
 
-if(FEATURE_DISCORD_RPC)
-	add_compile_definitions(POP_FEATURE_DISCORD_RPC)
-endif()
 
 if(FEATURE_STEAM_API)
 	add_compile_definitions(POP_FEATURE_STEAM_API)
@@ -152,7 +148,6 @@ FetchContent_Declare(
     GIT_TAG master
 )
 
-# the most hackiest hacks i've ever done
 if(APPLE)
     find_library(OPENAL_LIBRARY OpenAL REQUIRED)
     
@@ -205,11 +200,6 @@ FetchContent_Declare(
     GIT_TAG master
 )
 
-FetchContent_Declare(
-    discordrpc
-    GIT_REPOSITORY https://github.com/EclipseMenu/discord-presence
-    GIT_TAG main
-)
 
 FetchContent_Declare(
     glm
@@ -226,7 +216,6 @@ if(BUILD_EXAMPLES)
 	add_subdirectory(examples)
 endif()
 
-# djugjsfgufdgujdfgiujgdijfgifjdgidfjgifdgjfdgufdguifdg electr0gunner told me to add this
 if(BUILD_EXAMPLES OR BUILD_TOOLS)
     set(demo_deps PopLib)
 
