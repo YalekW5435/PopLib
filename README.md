@@ -15,7 +15,7 @@ This fork of PopLib aims to re-open and commpliment TeamPopWork's copy, by addin
 
 # Future Plans:
     Adding Contributors.
-    Adding further support for OpenGL and Vulkan rendering capabilities.
+    Adding further support for OpenGL and Vulkan rendering capabilities, including shader support.  
     Re-Adding back the Discord Social SDK (the Discord RPC had to be removed due to discontinuation and replacement by the discord Social/App SDKs).
     Full Steam API support.
     Adding TIFF support, including SVG and other vector image formats.
