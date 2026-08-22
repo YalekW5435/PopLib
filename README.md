@@ -14,14 +14,15 @@ This fork of PopLib aims to re-open and commpliment TeamPopWork's copy, by addin
     This also rids of the proprietary "J2K" or JPEG2000 formats, as there is no point in specifying external libs for 2K resolution JPEG images.
 
 # Future Plans:
-    Adding Contributors.
+    Adding Contributors/collaborators.
     Adding further support for OpenGL and Vulkan rendering capabilities, including shader support.  
     Re-Adding back the Discord Social SDK (the Discord RPC had to be removed due to discontinuation and replacement by the discord Social/App SDKs).
     Full Steam API support.
     Adding TIFF support, including SVG and other vector image formats.
     Adding Blender model support (P3D?).  
-    Full support of HTTP and HTTP/2 (maybe even HTTP/3), example: if one wants to share stats on an external server. (Promimnent in all of PopCap's games before 2015).
+    Full support of HTTP and HTTP/2 (maybe even HTTP/3), example: if one wants to share stats on an external server. (Prominent in all of PopCap's games before 2015).
     Full paklib support, with encoding and decoding available.
+    Adding some more game examples.
 # Licenses
     Please read the respective documents covering the separate licenses included with this library.
 
