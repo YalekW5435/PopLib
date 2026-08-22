@@ -20,14 +20,20 @@ This fork of PopLib aims to re-open and commpliment TeamPopWork's copy, by addin
     Full Steam API support.
     Adding TIFF support, including SVG and other vector image formats.
     Adding Blender model support (P3D?).  
-    Full support of HTTP and HTTP/2 (maybe even HTTP/3), example: if one wants to share stats on an external server. (Prominent in all of PopCap's games before 2015).
+    Full support of HTTP and HTTP/2 (maybe even HTTP/3), example: if one wants to share stats on an external server. 
+    (Prominent in all of PopCap's games before 2015).
+    
     Full paklib support, with encoding and decoding available.
     Adding some more game examples.
-    Complete rework of the font classes, unified to PopFont, instead of using 3 separate rendering capabilties to render a font.  
+    Complete rework of the font classes, unified to PopFont, instead of using 3 separate rendering capabilties to render a font, combining 
+    all 3 rendering capabilities and dding more if needed.
+   
     Add support for 3D coordinate systems, used alongside the blender model support in the near future. [?].
     Add an IDE similar to unity or gamemaker but with specific use with this library, along with LawnProject's ResoddedFramework (called PopIDE).  
     Code can be edited in another IDE if preferred.
-
+    Adding a brand new resource generator which picks any parameter from an XML file such as cols, rows, nobits, nopalettes, etc., including other 
+    random parameters and tags.  
+    A new font generator and tester that can be used alongside the future PopFont class.
     
 # Licenses
     Please read the respective documents covering the separate licenses included with this library.
