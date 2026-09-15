@@ -38,7 +38,7 @@ This fork of PopLib aims to re-open and commpliment TeamPopWork's copy, by addin
     Code can be edited in another IDE if preferred.
     Adding a brand new resource generator which picks any parameter from an XML file such as cols, rows, nobits, nopalettes, etc., including other 
     random parameters and tags.  
-    A new font generator and tester that can be used alongside the future PopFont class.
+    A new font generator and tester that can be used alongside the future PopFont class, with different layers pertaining to outline, fill, and 3D rendering if need be.  
     
     
 # Licenses
