@@ -207,7 +207,7 @@ FetchContent_Declare(
     GIT_TAG master
 )
 
-FetchContent_MakeAvailable(SDL3 SDL3_TTF miniaudio ogg vorbis curl zlib discordrpc glm Lua)
+FetchContent_MakeAvailable(SDL3 SDL3_TTF miniaudio ogg vorbis curl zlib glm Lua)
 
 add_subdirectory(external/misc EXCLUDE_FROM_ALL)
 add_subdirectory(PopLib)
