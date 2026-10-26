@@ -1,36 +1,6 @@
 # PopLib
 This fork of PopLib aims to re-open and commpliment TeamPopWork's copy, by adding more contributions and features.  
 
-# What has changed from the original SexyAppBase 1.3 and 1.34:
-    A more appropriate name.  
-    C++20 and 23 instead of C++14.
-    Renderers such as SDL and OpenGL, ridding of platform specifics from the Windows API, and making this independent to all Operating Systems, including Apple and Linux.
-    Opensource philosophy.
-    partial paklib support (PopCap's pak file format).
-    
-    The replacement of ImageLib with Sean Barett's `stb_image` set of headers, to load all of PopCap's image formats into memory at runtime. 
-    This means additional formats will be supported in the near future: BMP, GIF, PSD and HDR, alongside the already established PNG & JPEG.
-    It also unifies the entire imagelib into one set of files, therefore ridding of separate folders of libpng and libjpeg.  
-    This also rids of the proprietary "J2K" or JPEG2000 formats, as there is no point in specifying external libs for 2K resolution JPEG images.
-
-# Future Plans:
-    Adding Contributors.
-    Adding further support for OpenGL and Vulkan rendering capabilities.
-    Re-Adding back the Discord Social SDK (the Discord RPC had to be removed due to discontinuation and replacement by the discord Social/App SDKs).
-    Full Steam API support.
-    Adding TIFF support, including SVG and other vector image formats.
-    Adding Blender model support (P3D?).  
-    Full support of HTTP and HTTP/2 (maybe even HTTP/3), example: if one wants to share stats on an external server. (Promimnent in all of PopCap's games before 2015).
-    Full paklib support, with encoding and decoding available.
-# Licenses
-    Please read the respective documents covering the separate licenses included with this library.
-
-# Setting Up/Installing/Building PopLib
-    A complete step by step guide will be provided later on.
-    For Ubuntu builds, you may not be so lucky as Wayland support is not fully included, and migration from X11 window support has not been done yet.
-
-> see docs/getting_started.md
-
----
+# Please see the dev branch for future development and complete details.
 
 *Copyright 2025 Team PopWork. All rights reserved.*
