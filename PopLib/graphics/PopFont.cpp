@@ -106,19 +106,58 @@ Glyph *PopFont::GetOrGenerateGlyph(char32_t theCodepoint)
 
 		for (int i = 0; i < width * height; ++i)
 		{
-			uint8_t alpha = bitmap[i];
-			bits[i] = (alpha << 24) | 0x00FFFFFF; // White luminance with alpha coverage
+			uint8_t alpha;
+			
+			auto it = mGlyphCache.find(theCodepoint);
+			if (it != mGlyphCache.end())
+				return &it->second;
+
+			if (!mFontInfo)
+				return nullptr;
+
+			stbtt_fontinfo *info = static_cast<stbtt_fontinfo *>(mFontInfo);
+
+			int advanceWidth, leftSideBearing;
+			stbtt_GetCodepointHMetrics(info, theCodepoint, &advanceWidth, &leftSideBearing);
+
+			int width, height, xOff, yOff;
+			unsigned char *bitmap =
+				stbtt_GetCodepointBitmap(info, 0, mScale, theCodepoint, &width, &height, &xOff, &yOff);
+
+			Glyph glyph;
+			glyph.mWidth = width;
+			glyph.mHeight = height;
+			glyph.mXOffset = xOff;
+			glyph.mYOffset = yOff;
+			glyph.mXAdvance = static_cast<int>(advanceWidth * mScale);
+
+			if (width > 0 && height > 0 && bitmap != nullptr)
+			{
+				MemoryImage *img = new MemoryImage();
+				img->Create(width, height);
+				img->mHasAlpha = true; // Tell framework this texture uses alpha blending
+
+				uint32_t *bits = img->GetBits();
+
+				for (int i = 0; i < width * height; ++i)
+				{
+					uint8_t a = bitmap[i]; // Coverage byte (0 to 255)
+
+					// PopCap 32-bit ARGB format: (A << 24) | (R << 16) | (G << 8) | B
+					// Premultiply RGB by Alpha (for white text: R=A, G=A, B=A)
+					bits[i] = ((uint32_t)a << 24) | ((uint32_t)a << 16) | ((uint32_t)a << 8) | (uint32_t)a;
+				}
+
+				img->BitsChanged();
+				glyph.mImage = img;
+				stbtt_FreeBitmap(bitmap, nullptr);
+			}
+
+			mGlyphCache[theCodepoint] = glyph;
+			return &mGlyphCache[theCodepoint];
 		}
-
-		img->BitsChanged();
-		glyph.mImage = img;
-		stbtt_FreeBitmap(bitmap, nullptr);
 	}
-
-	mGlyphCache[theCodepoint] = glyph;
-	return &mGlyphCache[theCodepoint];
 }
-
 MemoryImage *PopFont::CreateOutlineGlyphImage(MemoryImage *theSrcImage, int theThickness, bool theHollow)
 {
 	if (!theSrcImage)
